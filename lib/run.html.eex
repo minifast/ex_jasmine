@@ -1,0 +1,18 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta content="text/html;charset=UTF-8" http-equiv="Content-Type"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Jasmine suite</title>
+  <style type="text/css"><%= jasmine_css %></style>
+</head>
+<body>
+  <div id="jasmine_content"></div>
+  <script type="text/javascript"><%= jasmine_js %></script>
+  <script type="text/javascript"><%= jasmine_html_js %></script>
+  <script type="text/javascript"><%= jasmine_boot_js %></script>
+  <%= for js_file <- js_files do %>
+    <script type="text/javascript" src="<%= js_file %>"></script>
+  <% end %>
+</body>
+</html>
