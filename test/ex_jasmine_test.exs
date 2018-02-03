@@ -5,14 +5,22 @@ defmodule JasmineTest do
   @opts Jasmine.init([])
 
   describe "init/0" do
-    test "returns a default configuration" do
+    test "returns a default configuration with no js files" do
       assert Jasmine.init([]).js_files == []
+    end
+
+    test "returns a default configuration with no css files" do
+      assert Jasmine.init([]).css_files == []
     end
   end
 
   describe "init/1" do
-    test "overrides both the javascript files" do
+    test "overrides the javascript files" do
       assert Jasmine.init(js_files: "ok").js_files == "ok"
+    end
+
+    test "overrides the css files" do
+      assert Jasmine.init(css_files: "ok").css_files == "ok"
     end
   end
 
